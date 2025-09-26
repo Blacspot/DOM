@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #646060;
+    letter-spacing: 4px;
+}
+#wrapper{
+    max-width: 960px;
+    margin: 40px auto;
+    border-radius: 6px;
+    text-align: center;
+    padding: 50px 0;
+    border: 3px solid #444;
+}
+#page-banner{
+    background-color: #7fdf3f;
+    padding: 10px 0;
+    text-align: center;
+    color:#fff;
+}
+
+#page-banner{
+    text-align: center;
+    color: white;
+}
+#movie-list #add-movie{
+   margin: 30px;
+}
+#movie-list ul{
+    list-style: none;
+}
+#movie-list ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+#movie-list ul li :hover{
+    border-left: #9361bf 2px solid;
+    background: #f4f4f4;
+}
+.delete{
+    background-color: #3f1911;
+    color: rgb(19, 15, 15);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#add-movie{
+    width: 400px;
+    margin: auto;
+}
+#add-movie input{
+    width: 129%;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#add-movie button{
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#add-movie button:hover{
+    background: darkgreen;
+}
+.edit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.edit:hover {
+  background-color: #0056b3;
+}
