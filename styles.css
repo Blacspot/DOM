@@ -19,6 +19,18 @@ body{
     padding: 50px 0;
     border: 3px solid #444;
 }
+.userdata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.userdata .fa-user-secret {
+    font-size: 30px;
+    color: white;
+}
 #page-banner{
     background-color: #7fdf3f;
     padding: 10px 0;
@@ -64,11 +76,12 @@ body{
 }
 .delete{
     background-color: #3f1911;
-    color: rgb(19, 15, 15);
+    color: rgb(226, 27, 27);
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    
 }
 
 #add-movie{
@@ -96,12 +109,13 @@ body{
 }
 .edit {
   background-color: #007bff;
-  color: white;
+  color: green;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 .edit:hover {
   background-color: #0056b3;
@@ -134,4 +148,27 @@ body{
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 900;
+}
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    /*margin-left: -125px;*/
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    right: 20px;
+    bottom: 30px;
+    font-size: 17px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }

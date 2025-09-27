@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const addButton = addMovie.querySelector('.add-movie-button');
     let editingLi = null;
 
+    function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 3000);
+  }
+
     list.addEventListener('click', function(e) {
 
       const li = e.target.closest('li');
@@ -20,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             input.value = '';
             addButton.textContent = 'Add';
           }
+          showToast("Movie deleted!")
         }
          if (e.target.classList.contains('edit')) {
           if (editingLi) {
@@ -48,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             editingLi = null;
             addMovieForm.reset();
             addButton.textContent = 'Add';
+            showToast("Movie updated!");
             return;
          }
          const li = document.createElement('li');
@@ -57,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
          movieName.textContent = value;
          editBtn.textContent = 'Edit';
-         deleteBtn.textContent = 'delete';
+         deleteBtn.textContent = 'Delete';
 
             movieName.classList.add('name');
             editBtn.classList.add('edit');
@@ -69,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             list.appendChild(li);
 
             addMovieForm.reset(); //clearing the input field after submission';
+            showToast("Movie added!");
 
     });
     editButton.addEventListener('click', function(e) {
