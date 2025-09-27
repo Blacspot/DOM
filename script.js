@@ -4,14 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const addMovie = forms['add-movie'];
     const input = addMovie.querySelector('input[type="text"]');
     const addButton = addMovie.querySelector('.add-movie-button');
-    const editButton = addMovie.querySelector('.edit-movie-button');
     let editingLi = null;
 
     list.addEventListener('click', function(e) {
 
       const li = e.target.closest('li');
 
-        if (e.target.className.contains('delete')) {
+       if (!li) return; // if click outside li, do nothing
+
+        if (e.target.classList.contains('delete')) {
             li.remove(); //removing the li element from the DOM
             
           if (editingLi === li) {
@@ -21,6 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
          if (e.target.classList.contains('edit')) {
+          if (editingLi) {
+            alert("Finish editing the current movie before editing another.");
+            return;            
+          }
             editingLi = li;
              input.value = li.querySelector('.name').textContent;
              addButton.textContent = "Save"; // show user they're editing
@@ -67,14 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     editButton.addEventListener('click', function(e) {
-        e.preventDefault();
         if (editingLi) {
-            alert("Finish editing the current movie before editing another.");
-            return;
+            addMovieForm.reset();
         }
-        addMovieForm.dispatchEvent(new Event('submit'));
+        
     });
-    addButton.addEventListener('click', function() {
-    editingLi = null;
+    
   });
-});

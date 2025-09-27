@@ -20,22 +20,30 @@
             <li>
             <span class="name">The Intern</span>
             <span class="edit">Edit</span>
+            <span class="actions">
             <span class="delete">Delete</span>
+            </span>
             </li>
             <li>
             <span class="name">Captain America</span>
             <span class="edit">Edit</span>
+            <span class="actions">
             <span class="delete">Delete</span>
+            </span>
             </li>
             <li>
             <span class="name">The Paper</span>
             <span class="edit">Edit</span>
+            <span class="actions">
             <span class="delete">Delete</span>
+            </span>
             </li>
             <li>
             <span class="name">Nobody 2</span>
             <span class="edit">Edit</span>
+            <span class="actions">
             <span class="delete">Delete</span>
+            </span>
             </li>
         </ul>
     </section>
@@ -44,6 +52,12 @@
         <input type="text" placeholder="Add movie title..." >
         <button type="submit" class="add-movie-button">Add</button>
     </form>
+     <div id="overlay"></div>
+     <form id="edit-movies" style="display: none;">
+                <label for="edit-movie-input">Edit movie title</label>
+                <input type="text" id="edit-movie-input">
+                <button type="submit">Update movie</button>
+            </form>
    </main>
 
 </body>

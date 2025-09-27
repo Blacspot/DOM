@@ -35,13 +35,28 @@ body{
 }
 #movie-list ul{
     list-style: none;
+    padding: 0 20px;
+    margin: 20px auto;
 }
 #movie-list ul li{
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+}
+.name {
+    flex: 1;
+    text-align: left;
+}
+.edit {
+    flex: 1;
+    text-align: center;
+}
+.actions {
+   flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 #movie-list ul li :hover{
     border-left: #9361bf 2px solid;
@@ -76,7 +91,7 @@ body{
     cursor: pointer;
     font-size: 16px;
 }
-#add-movie button:hover{
+#add-movie button:hover, #edit-movies button:hover{
     background: darkgreen;
 }
 .edit {
@@ -90,4 +105,33 @@ body{
 }
 .edit:hover {
   background-color: #0056b3;
+}
+.body.modal-active #wrapper {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+#edit-movies {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+    z-index: 1000;
+}
+#overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 900;
 }
